@@ -12,11 +12,44 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
+  <script>
+      let countLen = 10;
+      let val;
+      let count;
+      
+    function formatViewrsNum(value){
+      let result;
+    //check typeof value
+      if(typeof value === 'number' && !isNaN(value) && Number.isInteger(value) && value >= 0){
+
+        val = String(value);
+      if(val.length < countLen){
+
+       count = countLen - val.length;
+       
+       for(let i = 0; i < count; i++){
+         result += "0";
+       }
+       //to concatenate the zeros with the value
+      result += val;
+      console.log(result);
+      }
+      else{
+        alert("exceeds the count length");
+        return;
+      }
+      
+      }
+      else{
+        console.log('A string entered');
+      }
+      
+    }
+formatViewrsNum(1234.27);
+  </script>
 </head>
 
 <body>
-  <p>Nothing to see here...</p>
-  <!-- Project -->
   <script src="main.js"></script>
 </body>
 </html>

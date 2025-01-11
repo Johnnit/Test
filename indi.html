@@ -8,7 +8,34 @@
 </head>
 
 <body>
-<div>Hello world</div>
+    <img src="" alt="image">
+<button type="submit" id="check">Check</button>
 </body>
-
+<script>
+document.querySelector('#check').onclick = ()=>{
+  /*
+fetch('https://randomuser.me/api/')
+.then((res)=> res.json())
+.then((data)=>{
+  console.log(data.results[0].picture);
+  document.querySelector('img').src = `
+  ${data.results[0].picture.thumbnail}
+  `;
+})
+.catch(err=>{
+  console.log(err);
+})*/
+fetch("https://fakerapi.it/api/v2/persons?_locale=fr_FR")
+.then((res)=> res.json())
+.then(data=>{
+  console.log(data.data[0].image);
+  document.querySelector('img').src = `
+  ${data.data[0].image}
+  `;
+})
+.catch((err)=>{
+  console.log(err);
+})
+}
+</script>
 </html>
